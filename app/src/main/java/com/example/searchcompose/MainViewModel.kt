@@ -7,7 +7,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 
 @OptIn(FlowPreview::class)
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
 
     private val _searchText = MutableStateFlow("")
     val searchText = _searchText.asStateFlow()
@@ -16,11 +16,9 @@ class MainViewModel: ViewModel() {
     val isSearching = _isSearching.asStateFlow()
 
     private val _persons = MutableStateFlow(allPersons)
-    val persons = searchText
-        .debounce(1000L)
-        .onEach { _isSearching.update { true } }
+    val persons = searchText.debounce(1000L).onEach { _isSearching.update { true } }
         .combine(_persons) { text, persons ->
-            if(text.isBlank()) {
+            if (text.isBlank()) {
                 persons
             } else {
                 delay(2000L)
@@ -28,12 +26,8 @@ class MainViewModel: ViewModel() {
                     it.doesMatchSearchQuery(text)
                 }
             }
-        }
-        .onEach { _isSearching.update { false } }
-        .stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5000),
-            _persons.value
+        }.onEach { _isSearching.update { false } }.stateIn(
+            viewModelScope, SharingStarted.WhileSubscribed(5000), _persons.value
         )
 
     fun onSearchTextChange(text: String) {
@@ -42,8 +36,7 @@ class MainViewModel: ViewModel() {
 }
 
 data class Person(
-    val firstName: String,
-    val lastName: String
+    val firstName: String, val lastName: String
 ) {
     fun doesMatchSearchQuery(query: String): Boolean {
         val matchingCombinations = listOf(

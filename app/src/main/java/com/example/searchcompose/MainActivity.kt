@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
                         placeholder = { Text(text = "Search") }
                     )
                     Spacer(modifier = Modifier.height(16.dp))
-                    if(isSearching) {
+                    if (isSearching) {
                         Box(modifier = Modifier.fillMaxSize()) {
                             CircularProgressIndicator(
                                 modifier = Modifier.align(Alignment.Center)
