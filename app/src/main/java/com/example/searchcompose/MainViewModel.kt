@@ -60,23 +60,23 @@ data class Person(
 
 private val allPersons = listOf(
     Person(
-        firstName = "Alibek",
-        lastName = "Adamboyev"
+        firstName = R.string.person_first_name_1.toString(),
+        lastName = R.string.person_last_name_1.toString()
     ),
     Person(
-        firstName = "Philipp",
-        lastName = "Lackner"
+        firstName = R.string.person_first_name_2.toString(),
+        lastName = R.string.person_last_name_2.toString()
     ),
     Person(
-        firstName = "Beff",
-        lastName = "Jezos"
+        firstName = R.string.person_first_name_3.toString(),
+        lastName = R.string.person_last_name_3.toString()
     ),
     Person(
-        firstName = "Chris P.",
-        lastName = "Bacon"
+        firstName = R.string.person_first_name_4.toString(),
+        lastName = R.string.person_last_name_4.toString()
     ),
     Person(
-        firstName = "Jeve",
-        lastName = "Stops"
+        firstName = R.string.person_first_name_5.toString(),
+        lastName = R.string.person_last_name_5.toString()
     ),
 )
