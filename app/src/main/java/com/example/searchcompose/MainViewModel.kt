@@ -34,9 +34,9 @@ class MainViewModel : ViewModel() {
         _searchText.value = text
     }
 }
-
 data class Person(
-    val firstName: String, val lastName: String
+    val firstName: String, 
+    val lastName: String
 ) {
     fun doesMatchSearchQuery(query: String): Boolean {
         val matchingCombinations = listOf(
@@ -53,23 +53,23 @@ data class Person(
 
 private val allPersons = listOf(
     Person(
-        firstName = R.string.person_first_name_1.toString(),
-        lastName = R.string.person_last_name_1.toString()
+        firstName = "Alibek",
+        lastName =  "Adamboyev"
     ),
     Person(
-        firstName = R.string.person_first_name_2.toString(),
-        lastName = R.string.person_last_name_2.toString()
+        firstName = "Elon",
+        lastName = "Musk"
     ),
     Person(
-        firstName = R.string.person_first_name_3.toString(),
-        lastName = R.string.person_last_name_3.toString()
+        firstName = "Jeff",
+        lastName = "Bezos"
     ),
     Person(
-        firstName = R.string.person_first_name_4.toString(),
-        lastName = R.string.person_last_name_4.toString()
+        firstName = "Bill",
+        lastName = "Gates"
     ),
     Person(
-        firstName = R.string.person_first_name_5.toString(),
-        lastName = R.string.person_last_name_5.toString()
+        firstName = "Steve",
+        lastName = "Jobs"
     ),
 )
